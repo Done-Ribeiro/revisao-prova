@@ -1,0 +1,116 @@
+<div class="container">
+  <form>
+    <div class="card-header">
+      <div class="row">
+        <div class="col-8">
+          Pessoas
+        </div>
+        <div class="col-4">
+          <button type="button" class="btn btn-primary" (click)="adicionar()">Adicionar</button> |
+          <button type="button" class="btn btn-warning" (click)="alterar()">Alterar</button> |
+          <button type="button" class="btn btn-danger" (click)="excluir()">Excluir</button>
+        </div>
+      </div>
+    </div>
+    <div class="alert alert-primary" role="alert">
+      {{mens}}
+    </div>
+    <div class="card-body">
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="inputCodigo">Código</label>
+          <input type="number" class="form-control" name="inputCodigo" [(ngModel)]="obj.id">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputNome">Nome</label>
+          <input type="text" class="form-control" name="inputNome" [(ngModel)]="obj.nome">
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group  col-md-6">
+          <label for="inputLocal">CPF</label>
+          <input type="text" class="form-control" name="inputLocal" [(ngModel)]="obj.cpf">
+        </div>
+        <div class="form-group  col-md-6">
+          <label for="inputValor">RG</label>
+          <input type="text" class="form-control" name="inputValor" [(ngModel)]="obj.rg">
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group  col-md-6">
+          <label for="inputValor">Rua</label>
+          <input type="text" class="form-control" name="inputValor" [(ngModel)]="obj.rua">
+        </div>
+        <div class="form-group  col-md-6">
+          <label for="inputLocal">Bairro</label>
+          <input type="text" class="form-control" name="inputLocal" [(ngModel)]="obj.bairro">
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group  col-md-6">
+          <label for="inputValor">Cidade</label>
+          <input type="text" class="form-control" name="inputValor" [(ngModel)]="obj.cidade">
+        </div>
+        <div class="form-group  col-md-6">
+          <label for="inputLocal">UF</label>
+          <input type="text" class="form-control" name="inputLocal" [(ngModel)]="obj.uf">
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group  col-md-6">
+          <label for="inputValor">CEP</label>
+          <input type="number" class="form-control" name="inputValor" [(ngModel)]="obj.cep">
+        </div>
+        <div class="form-group  col-md-6">
+          <label for="inputLocal">Email</label>
+          <input type="text" class="form-control" name="inputLocal" [(ngModel)]="obj.email">
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group  col-md-6">
+          <label for="inputValor">Senha</label>
+          <input type="text" class="form-control" name="inputValor" [(ngModel)]="obj.senha">
+        </div>
+        <div class="form-group  col-md-6">
+          <label for="inputLocal">Tipo</label>
+          <input type="text" class="form-control" name="inputLocal" [(ngModel)]="obj.tipo">
+        </div>
+      </div>
+
+    </div>
+    <div class="card">
+      <div class="card-body">
+        <table class="table">
+          <th scope="col"> Código </th>
+          <th scope="col"> Nome </th>
+          <th scope="col"> CPF </th>
+          <th scope="col"> RG </th>
+          <th scope="col"> Rua </th>
+          <th scope="col"> Bairro </th>
+          <th scope="col"> Cidade </th>
+          <th scope="col"> UF </th>
+          <th scope="col"> CEP </th>
+          <th scope="col"> Email </th>
+          <tr *ngFor="let p of lista">
+            <td>{{p.id}}</td>
+            <td>{{p.nome}}</td>
+            <td>{{p.cpf}}</td>
+            <td>{{p.rg}}</td>
+            <td>{{p.rua}}</td>
+            <td>{{p.bairro}}</td>
+            <td>{{p.cidade}}</td>
+            <td>{{p.uf}}</td>
+            <td>{{p.cep}}</td>
+            <td>{{p.email}}</td>
+            <td><button type="button" class="btn btn-secondary" (click)="carregarDados(p)">Carregar</button></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </form>
+</div>
